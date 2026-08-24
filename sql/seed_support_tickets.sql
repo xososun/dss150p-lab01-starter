@@ -267,8 +267,26 @@ VALUES
 (250, 'C0048', 'Product', 'Low', 'L. Tan', '2026-01-04 04:00:00', NULL, 'Open');
 
 -- Suggested inspection queries
+-- Table name and schema
+SELECT table_schema, table_name
+FROM information_schema.tables
+WHERE table_name = 'support_tickets';
+
+-- Column names, SQL data types, and nullable fields
+SELECT column_name, data_type, is_nullable
+FROM information_schema.columns
+WHERE table_name = 'support_tickets'
+ORDER BY ordinal_position;
+
+-- Constraints and keys
+SELECT constraint_name, constraint_type
+FROM information_schema.table_constraints
+WHERE table_name = 'support_tickets'
+ORDER BY constraint_name;
+
 SELECT COUNT(*) AS row_count FROM support_tickets;
-SELECT * FROM support_tickets ORDER BY ticket_id LIMIT 10;
+SELECT * FROM support_tickets ORDER BY ticket_id LIMIT 5;
+
 SELECT COUNT(*) AS unassigned_tickets FROM support_tickets WHERE assigned_agent IS NULL;
 SELECT category, COUNT(*) AS tickets
 FROM support_tickets
