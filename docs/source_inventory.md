@@ -18,3 +18,7 @@ This inventory catalogs the main sources included in the starter repository and 
 - The main business keys are strong candidates for deduplication and joins: customer_id, order_id, product_id, and ticket_id.
 - The highest schema-change risk appears in the JSON and API-based sources because they are less rigid than CSV and SQL table definitions.
 - The highest data-quality risk appears in the operational support data because it includes nullable business fields and status transitions that can create inconsistencies across time.
+
+## API Retrieval
+
+API retrieval timestamp (UTC): 2026-08-24T18:02:32.866141+00:00
