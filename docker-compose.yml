@@ -3,9 +3,9 @@ services:
     image: postgres:16
     container_name: dss150p-postgres
     environment:
-      POSTGRES_DB: dss150p
+      POSTGRES_DB: dss150p_lab
       POSTGRES_USER: dss150p
-      POSTGRES_PASSWORD: dss150p
+      POSTGRES_PASSWORD: dss150p_lab
     ports:
       - "5432:5432"
     volumes:
