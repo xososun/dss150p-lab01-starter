@@ -1,0 +1,48 @@
+dataset_name: customers.csv
+version: 1.0
+owner: customer master / CRM team
+source_type: file
+source_format: csv
+acquisition_method: file copy/import from the local raw data directory
+expected_update_pattern: batch
+primary_key: null
+schema:
+  - name: customer_id
+    type: string
+    nullable: false
+    description: Candidate customer business identifier; repeated values are present in the source.
+  - name: first_name
+    type: string
+    nullable: false
+    description: Customer first name.
+  - name: last_name
+    type: string
+    nullable: false
+    description: Customer last name.
+  - name: email
+    type: string
+    nullable: true
+    description: Customer email address; blank values should remain null.
+  - name: city
+    type: string
+    nullable: true
+    description: Customer city; blank values should remain null.
+  - name: signup_date
+    type: date
+    nullable: false
+    description: Customer signup date.
+  - name: customer_segment
+    type: string
+    nullable: false
+    description: Customer segment category.
+quality_rules:
+  - customer_id must not be null or empty.
+  - customer_id must be unique before the data is used for joins; duplicate IDs must be identified.
+  - Required columns must be present and unexpected columns must be identified.
+  - signup_date must be a valid date in YYYY-MM-DD format.
+  - Blank email and city values must be represented as null, not zero or the string "null".
+freshness_expectation: unknown - requires confirmation
+duplicate_policy: unknown - requires source owner confirmation
+schema_evolution_policy: unknown - requires source owner confirmation
+consumer: unknown - requires source owner confirmation
+notes: The source is a 250-row customer CSV snapshot. The profile reports three duplicate customer_id groups and missing values in email and city. Treat customer_id as a candidate business key and validate uniqueness before downstream joins. CSV types are not self-describing, so preserve identifiers as strings and explicitly parse logical types. Confirm the update cadence, duplicate disposition, schema-change procedure, and downstream consumer with the source owner.
