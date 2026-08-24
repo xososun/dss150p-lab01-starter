@@ -152,3 +152,7 @@ The starter files intentionally stop before a complete data pipeline.
   `http://localhost:8000/api/orders`
 
 The local option is useful when your internet access is unreliable.
+
+## AI Usage
+- Visual Studio Code (VSCode) built-in agents and/or chatbot was freely utilized as needed in the making of this lab work.
+  Especially, during debugging processes and solving problems encountered locally, particularly PostgreSQL-involved incidents.
