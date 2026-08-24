@@ -1,4 +1,4 @@
-**Lifecycle Table**
+## Lifecycle Table
 
 | Lifecycle Element | What It Means | Example In This Lab | Primary Tool/Artifact | Possible Failure |
 | --- | --- | --- | --- | --- |
@@ -10,10 +10,9 @@
 | Delivery | Package cleaned data in formats ready for consumption or analysis. | Prepared datasets in data\evidence\ directory, normalized tables ready for queries | data\evidence\ directory, SQL views/tables | Format incompatibility, insufficient data for analysis, unmet SLAs, schema changes |
 | Consumer | The end user, application, or system that uses the delivered data for decision-making or operations. | Data analysts running queries, BI dashboards, reporting applications | SQL queries, analytics notebooks, business intelligence tools | Incorrect interpretation of data, stale data consumption, missing context/documentation |
 
-
 <br>
 
-**Diagram**
+## Diagram
 
 | Start |  |  |  |  |  | End |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
